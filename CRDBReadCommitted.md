@@ -1,6 +1,6 @@
 # Read Committed Isolation vs Serializable in CockroachDB
 
-> :warning: **Disclaimer**: This document is a work in progress and has not yet been peer-reviewed. The information presented here is subject to change and should not be considered complete or final. Reader discretion is advised.
+> :warning: **Disclaimer**: The information presented here is subject to change and should not be considered complete or final. Reader discretion is advised.
 
 
 
