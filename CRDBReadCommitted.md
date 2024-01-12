@@ -6,7 +6,7 @@
 
 <a id="toc"></a>
 ## Table to contents
-- [2 Major Drawbacks](https://github.com/Arivijay/blog/blob/crdb/CRDBReadCommitted.md#drawbacks)
+
 - [Setting Up Read Committed Isolation in CockroachDB](https://github.com/Arivijay/blog/blob/crdb/CRDBReadCommitted.md#setting-up-read-committed-isolation-in-cockroachdb)
 - 4 Major Distinctions: RC vs Serializable
   - [Transaction Model](https://github.com/Arivijay/blog/blob/crdb/CRDBReadCommitted.md#transaction-model)
@@ -14,17 +14,8 @@
   - [Isolation Levels and Their Guarantees](https://github.com/Arivijay/blog/blob/crdb/CRDBReadCommitted.md#isolation-levels-and-their-guarantees)
   - [Retry Management](https://github.com/Arivijay/blog/blob/crdb/CRDBReadCommitted.md#retry-management)
 - [Tests and Observations](https://github.com/Arivijay/blog/blob/crdb/CRDBReadCommitted.md#tests-and-observations)
+- [2 Major Drawbacks of Read Committed Isolation](https://github.com/Arivijay/blog/blob/crdb/CRDBReadCommitted.md#drawbacks)
 
-
-
-## Drawbacks
-
-### Risk of Data Integrity Issues:
-- There is an increased risk of the application behaving in unexpected ways, potentially leading to data integrity issues.
-### Greater Developer Burden: 
-- App Devs need a deeper understanding of potential conflicts and must implement additional logic to handle these cases, which can be error-prone and require rigorous testing.
-
-[Back to Table of Contents](#toc)
 
 
 ## Setting Up Read Committed Isolation in CockroachDB
@@ -451,6 +442,15 @@ COMMIT;
 
 ### Serialiable vs Serialiable with SFU vs RC
 ![image](https://github.com/cockroachlabs/CRDB-PlatformHealthCheck/assets/89301858/41363ed3-3b8d-4df6-92a4-b030d0c870f7)
+
+[Back to Table of Contents](#toc)
+
+## Drawbacks
+
+### Risk of Data Integrity Issues:
+- There is an increased risk of the application behaving in unexpected ways, potentially leading to data integrity issues.
+### Greater Developer Burden: 
+- App Devs need a deeper understanding of potential conflicts and must implement additional logic to handle these cases, which can be error-prone and require rigorous testing.
 
 [Back to Table of Contents](#toc)
 
