@@ -7,13 +7,13 @@
 <a id="toc"></a>
 ## Table to contents
 - [2 Major Drawbacks](https://github.com/Arivijay/blog/blob/crdb/CRDBReadCommitted.md#drawbacks)
-- [Setting Up Read Committed Isolation in CockroachDB](https://github.com/Arivijay/blog/crdb/CRDBReadCommitted.md#setting-up-read-committed-isolation-in-cockroachdb)
+- [Setting Up Read Committed Isolation in CockroachDB](https://github.com/Arivijay/blog/blob/crdb/CRDBReadCommitted.md#setting-up-read-committed-isolation-in-cockroachdb)
 - 4 Major Distinctions: RC vs Serializable
-  - [Transaction Model](https://github.com/Arivijay/blog/crdb/CRDBReadCommitted.md#transaction-model)
-  - [Locking Behavior](https://github.com/Arivijay/blog/crdb/CRDBReadCommitted.md#locking-behavior)
-  - [Isolation Levels and Their Guarantees](https://github.com/Arivijay/blog/crdb/CRDBReadCommitted.md#isolation-levels-and-their-guarantees)
-  - [Retry Management](https://github.com/Arivijay/blog/crdb/CRDBReadCommitted.md#retry-management)
-- [Tests and Observations](https://github.com/Arivijay/blog/crdb/CRDBReadCommitted.md#tests-and-observations)
+  - [Transaction Model](https://github.com/Arivijay/blog/blob/crdb/CRDBReadCommitted.md#transaction-model)
+  - [Locking Behavior](https://github.com/Arivijay/blog/blob/crdb/CRDBReadCommitted.md#locking-behavior)
+  - [Isolation Levels and Their Guarantees](https://github.com/Arivijay/blog/blob/crdb/CRDBReadCommitted.md#isolation-levels-and-their-guarantees)
+  - [Retry Management](https://github.com/Arivijay/blog/blob/crdb/CRDBReadCommitted.md#retry-management)
+- [Tests and Observations](https://github.com/Arivijay/blog/blob/crdb/CRDBReadCommitted.md#tests-and-observations)
 
 
 
