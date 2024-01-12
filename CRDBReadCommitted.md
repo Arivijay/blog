@@ -6,31 +6,16 @@
 
 <a id="toc"></a>
 ## Table to contents
-- [2 Major Motivations](https://github.com/cockroachlabs/CRDB-PlatformHealthCheck/blob/main/CRDBReadCommitted.md#motivation)
-- [2 Major Drawbacks](https://github.com/cockroachlabs/CRDB-PlatformHealthCheck/blob/main/CRDBReadCommitted.md#drawbacks)
-- [Setting Up Read Committed Isolation in CockroachDB](https://github.com/cockroachlabs/CRDB-PlatformHealthCheck/blob/main/CRDBReadCommitted.md#setting-up-read-committed-isolation-in-cockroachdb)
+- [2 Major Drawbacks](https://github.com/Arivijay/blog/edit/crdb/CRDBReadCommitted.md#drawbacks)
+- [Setting Up Read Committed Isolation in CockroachDB](https://github.com/Arivijay/blog/edit/crdb/CRDBReadCommitted.md#setting-up-read-committed-isolation-in-cockroachdb)
 - 4 Major Distinctions: RC vs Serializable
-  - [Transaction Model](https://github.com/cockroachlabs/CRDB-PlatformHealthCheck/blob/main/CRDBReadCommitted.md#transaction-model)
-  - [Locking Behavior](https://github.com/cockroachlabs/CRDB-PlatformHealthCheck/blob/main/CRDBReadCommitted.md#locking-behavior)
-  - [Isolation Levels and Their Guarantees](https://github.com/cockroachlabs/CRDB-PlatformHealthCheck/blob/main/CRDBReadCommitted.md#isolation-levels-and-their-guarantees)
-  - [Retry Management](https://github.com/cockroachlabs/CRDB-PlatformHealthCheck/blob/main/CRDBReadCommitted.md#retry-management)
-- [Tests and Observations](https://github.com/cockroachlabs/CRDB-PlatformHealthCheck/blob/main/CRDBReadCommitted.md#tests-and-observations)
+  - [Transaction Model](https://github.com/Arivijay/blog/edit/crdb/CRDBReadCommitted.md#transaction-model)
+  - [Locking Behavior](https://github.com/Arivijay/blog/edit/crdb/CRDBReadCommitted.md#locking-behavior)
+  - [Isolation Levels and Their Guarantees](https://github.com/Arivijay/blog/edit/crdb/CRDBReadCommitted.md#isolation-levels-and-their-guarantees)
+  - [Retry Management](https://github.com/Arivijay/blog/edit/crdb/CRDBReadCommitted.md#retry-management)
+- [Tests and Observations](https://github.com/Arivijay/blog/edit/crdb/CRDBReadCommitted.md#tests-and-observations)
 
 
-## Motivation
-### Ease of Application Migration:
-- Read Committed is expected to simplify migrations from databases like PostgreSQL, where it's the default isolation level.
-- Applications originally built for Read Committed often face challenges adapting to CockroachDB's Serializable isolation, especially due to the need for transaction retry logic.
-
-### Performance Considerations:
-- Read Committed allows non-blocking reads and limits transaction contention to write-write conflicts, enhancing performance predictability.
-- However, it allows concurrency anomalies, which could be acceptable for some workloads or some transactions.
-
-### Stepping Stone to Snapshot Isolation:
-- Implementing Read Committed sets the groundwork for potentially supporting Snapshot isolation in the future.
-- Most engineering efforts for Read Committed will also aid in a future Snapshot isolation implementation.
-
-[Back to Table of Contents](#toc)
 
 ## Drawbacks
 
